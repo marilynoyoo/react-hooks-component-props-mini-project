@@ -1,15 +1,30 @@
-import React from "react";
-import blogData from "../data/blog";
+import React from 'react';
+import Header from './Header';
+import About from './About';
+import ArticleList from './ArticleList';
 
-console.log(blogData);
-
-function App() {
+// App Component
+const App = () => {
+  const blogName = "My Awesome Blog";
+  const aboutText = "Welcome to my blog where I share interesting content!";
+  const blogImage = "https://via.placeholder.com/215";
+  const posts = [
+    {
+      title: "First Post",
+      date: "August 15, 2024",
+      preview: "This is a preview of the first post."
+    },
+    {
+      title: "Second Post",
+      preview: "This is a preview of the second post."
+    }
+  ];
   return (
-    <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+    <div>
+      <Header name={blogName} />
+      <About image={blogImage} about={aboutText} />
+      <ArticleList posts={posts} />
     </div>
   );
-}
-
+};
 export default App;
